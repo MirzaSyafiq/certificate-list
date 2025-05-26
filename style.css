@@ -27,22 +27,51 @@ h2 {
   display: inline-block;
 }
 
+.gallery-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
 .certificate-gallery {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1em;
   gap: 1em;
-  margin-top: 1em;
 }
 
 .certificate-gallery img {
   max-width: 300px;
-  border: 2px solid black; /* changed from #ccc to black */
+  min-width: 300px;
+  border: 2px solid black;
   border-radius: 8px;
+  flex-shrink: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .certificate-gallery img:hover {
   transform: scale(1.03);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2c2c2c;
+  color: white;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0 10px;
+  z-index: 2;
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
 }
